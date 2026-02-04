@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<VBox spacing="15" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.hnk.FormController" stylesheets="@style.css" styleClass="main-container">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" styleClass="parent" xmlns:fx="http://javafx.com/fxml" fx:controller="com.hnk.FormController" stylesheets="@style.css">
 
-    <padding>
-        <Insets top="40" right="40" bottom="40" left="40"/>
-    </padding>
+    <VBox alignment="CENTER" layoutX="0" prefHeight="400.0" prefWidth="350.0" spacing="15">
+        <Label text="Se Connecter" styleClass="header-text"/>
+        <TextField fx:id="emailLogin" promptText="Email" styleClass="input-field"/>
+        <PasswordField fx:id="passLogin" promptText="Mot de passe" styleClass="input-field"/>
+        <Hyperlink text="Mot de passe oublié ?" styleClass="forgot-link"/>
+        <Button text="SE CONNECTER" styleClass="btn-primary"/>
+    </VBox>
 
-    <Label text="CONTACT HNK" styleClass="title-label"/>
+    <VBox alignment="CENTER" layoutX="350.0" prefHeight="400.0" prefWidth="350.0" spacing="15">
+        <Label text="Créer un Compte" styleClass="header-text"/>
+        <TextField fx:id="nameReg" promptText="Nom" styleClass="input-field"/>
+        <TextField fx:id="emailReg" promptText="Email" styleClass="input-field"/>
+        <PasswordField fx:id="passReg" promptText="Mot de passe" styleClass="input-field"/>
+        <Button text="S'INSCRIRE" styleClass="btn-primary"/>
+    </VBox>
 
-    <GridPane hgap="10" vgap="15" alignment="CENTER">
-        <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <TextField fx:id="nameField" promptText="Votre nom" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <VBox fx:id="slidingPane" alignment="CENTER" prefHeight="400.0" prefWidth="350.0" styleClass="side-pane">
+        <Label fx:id="sideTitle" text="Bonjour, Ami !" styleClass="side-header"/>
+        <Label fx:id="sideDesc" text="Entrez vos données pour utiliser toutes les fonctionnalités du site" wrapText="true" alignment="CENTER" styleClass="side-text"/>
+        <Button fx:id="sideBtn" text="S'INSCRIRE" onAction="#handleSideAction" styleClass="btn-outline"/>
+    </VBox>
 
-        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <TextField fx:id="emailField" promptText="exemple@hnk.com" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-
-        <Label text="Message:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <TextArea fx:id="messageArea" prefRowCount="3" promptText="Votre message..." GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    </GridPane>
-
-    <Button text="Envoyer" onAction="#handleSubmit" styleClass="submit-button"/>
-    <Label fx:id="statusLabel" styleClass="status-text"/>
-</VBox>
+</AnchorPane>

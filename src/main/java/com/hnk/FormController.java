@@ -1,49 +1,37 @@
 package com.hnk;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class FormController {
-    @FXML private TextField nameField;
-    @FXML private Button submitBtn;
+    @FXML private VBox slidingPane;
+    @FXML private Label sideTitle, sideDesc;
+    @FXML private Button sideBtn;
 
-    // 1. Animation de secouement (en cas d'erreur)
-    private void shakeNode(Node node) {
-        TranslateTransition tt = new TranslateTransition(Duration.millis(50), node);
-        tt.setFromX(0);
-        tt.setByX(10);
-        tt.setCycleCount(6);
-        tt.setAutoReverse(true);
-        tt.play();
-    }
-
-    // 2. Animation d'apparition (Fade In)
-    @FXML
-    public void initialize() {
-        // Cette méthode s'exécute au chargement de la fenêtre
-        FadeTransition ft = new FadeTransition(Duration.millis(1500), nameField.getParent());
-        ft.setFromValue(0.0);
-        ft.setToValue(1.0);
-        ft.play();
-    }
+    private boolean isLoginSide = true;
 
     @FXML
-    protected void handleSubmit() {
-        if (nameField.getText().isEmpty()) {
-            shakeNode(nameField); // On secoue le champ si c'est vide !
+    private void handleSideAction() {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.6), slidingPane);
+
+        if (isLoginSide) {
+            // Déplacement vers la DROITE pour montrer le formulaire d'inscription
+            transition.setToX(350);
+            sideTitle.setText("Bon Retour !");
+            sideDesc.setText("Pour rester connecté avec nous, connectez-vous avec vos infos.");
+            sideBtn.setText("S'INSCRIRE");
+            isLoginSide = false;
         } else {
-            // Animation de pulsation du bouton au clic
-            ScaleTransition st = new ScaleTransition(Duration.millis(100), submitBtn);
-            st.setToX(1.1);
-            st.setToY(1.1);
-            st.setAutoReverse(true);
-            st.setCycleCount(2);
-            st.play();
+            // Déplacement vers la GAUCHE pour montrer le login
+            transition.setToX(0);
+            sideTitle.setText("Bonjour, Ami !");
+            sideDesc.setText("Entrez vos données personnelles pour utiliser toutes les fonctionnalités du site.");
+            sideBtn.setText("SE CONNECTER");
+            isLoginSide = true;
         }
+        transition.play();
     }
 }

@@ -1,71 +1,49 @@
-/* Container principal avec un dégradé subtil */
-.main-container {
-    -fx-background-color: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+.parent {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
 }
 
-/* Titre stylisé */
-.title-label {
+.header-text {
     -fx-font-size: 28px;
-    -fx-text-fill: #ff3e3e;
     -fx-font-weight: bold;
-    -fx-effect: dropshadow(gaussian, rgba(255, 62, 62, 0.3), 10, 0.5, 0, 0);
-    -fx-padding: 0 0 20 0;
+    -fx-text-fill: #333;
 }
 
-/* Champs de saisie (TextField & TextArea) */
-.text-field, .text-area {
-    -fx-background-color: #333333;
-    -fx-background-radius: 5;
-    -fx-border-color: #444444;
-    -fx-border-radius: 5;
-    -fx-text-fill: white;
-    -fx-prompt-text-fill: #888888;
-    -fx-highlight-fill: #ff3e3e;
+.input-field {
+    -fx-background-color: #eee;
+    -fx-pref-width: 250;
     -fx-padding: 10;
+    -fx-background-radius: 5;
 }
 
-/* Effet focus sur les champs */
-.text-field:focused, .text-area:focused {
-    -fx-border-color: #ff3e3e;
-    -fx-background-color: #3b3b3b;
-    -fx-effect: dropshadow(gaussian, rgba(255, 62, 62, 0.2), 5, 0, 0, 0);
-}
-
-/* Le bouton d'envoi */
-.submit-button {
-    -fx-background-color: linear-gradient(to bottom, #ff3e3e, #b91c1c);
-    -fx-background-radius: 25;
+.btn-primary {
+    -fx-background-color: #4B2C71;
     -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 10 40;
+}
+
+/* Le Volet Violet */
+.side-pane {
+    -fx-background-color: #6A349B;
+    -fx-background-radius: 15;
+}
+
+.side-header {
+    -fx-font-size: 30px;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 12 30 12 30;
-    -fx-cursor: hand;
-    -fx-transition: 0.3s;
+    -fx-text-fill: white;
 }
 
-.submit-button:hover {
-    -fx-background-color: linear-gradient(to bottom, #ff5e5e, #d42a2a);
-    -fx-effect: dropshadow(gaussian, rgba(255, 62, 62, 0.5), 15, 0, 0, 0);
+.side-text {
+    -fx-text-fill: #ddd;
+    -fx-padding: 20;
 }
 
-/* Labels de texte */
-.label {
-    -fx-text-fill: #e0e0e0;
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-}
-
-/* Message de statut en bas */
-.status-text {
-    -fx-text-fill: #00ff88;
-    -fx-font-style: italic;
-}
-.submit-button {
-    -fx-transition: 0.3s; /* Ne fonctionne pas nativement partout en JavaFX pur, mais simulez-le ainsi : */
-}
-
-.submit-button:hover {
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+    -fx-padding: 8 35;
 }
