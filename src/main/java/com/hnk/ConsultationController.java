@@ -19,7 +19,7 @@ public class ConsultationController {
 
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/hopital_db",
+                "jdbc:mysql://localhost:3306/hopital",
                 "root", ""
         );
     }

@@ -210,7 +210,7 @@ public class TablePatient {
     private void deletePatient(Patients patients) {
         String sql = "DELETE FROM patients WHERE idPatient=?";
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/hopital_db", "root",""
+                "jdbc:mysql://localhost:3306/hopital", "root",""
         ); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, patients.getId());
             stmt.executeUpdate();
@@ -224,7 +224,7 @@ public class TablePatient {
         masterData.clear();
         String query = "SELECT * FROM patients";
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/hopital_db", "root",""
+                "jdbc:mysql://localhost:3306/hopital", "root",""
         ); Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
 

@@ -134,7 +134,7 @@ public class RendezVousService {
         String sql = "SELECT \n" +
                 "    TRIM(BOTH \"'\" FROM SUBSTRING_INDEX(SUBSTRING_INDEX(COLUMN_TYPE, \"ENUM(\", -1), \")\", 1)) AS enum_values\n" +
                 "FROM INFORMATION_SCHEMA.COLUMNS\n" +
-                "WHERE TABLE_SCHEMA = 'hopital_db'\n" +
+                "WHERE TABLE_SCHEMA = 'hopital'\n" +
                 "  AND TABLE_NAME = 'rendez_vous'\n" +
                 "  AND COLUMN_NAME = 'statut';\n";
 
@@ -192,7 +192,7 @@ public class RendezVousService {
     // ------------------------- Classe interne pour la connexion à la base -------------------------
     public static class Database {
 
-        private static final String URL = "jdbc:mysql://localhost:3306/hopital_db";
+        private static final String URL = "jdbc:mysql://localhost:3306/hopital";
         private static final String USER = "root";
         private static final String PASSWORD = "";
 

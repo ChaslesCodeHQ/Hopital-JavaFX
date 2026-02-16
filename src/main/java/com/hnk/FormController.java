@@ -43,7 +43,7 @@ public class FormController {
         }
 
         // Paramètres de connexion MySQL
-        String url = "jdbc:mysql://localhost:3306/hopital_db";
+        String url = "jdbc:mysql://localhost:3306/hopital";
         String dbUser = "root";
         String dbPassword = "";
 

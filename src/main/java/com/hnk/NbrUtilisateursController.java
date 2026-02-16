@@ -19,7 +19,7 @@ public class NbrUtilisateursController {
 
     public class Database {
 
-        private static final String URL = "jdbc:mysql://localhost:3306/hopital_db";
+        private static final String URL = "jdbc:mysql://localhost:3306/hopital";
         private static final String USER = "root";
         private static final String PASSWORD = "";
 

@@ -121,7 +121,7 @@ public class AddPatientController {
         String sql = "UPDATE patients SET matriculePatient=?, nomPatient=?, prenomPatient=?, dateNais=?, adresse=?, phone=?, etatSante=?, profession=?, dateEnregistrement=? WHERE idPatient=?";
 
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/hopital_db", "root", "");
+                "jdbc:mysql://localhost:3306/hopital", "root", "");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, matriculeField.getText());

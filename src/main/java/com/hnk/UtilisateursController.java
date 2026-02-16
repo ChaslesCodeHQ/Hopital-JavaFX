@@ -41,7 +41,7 @@ public class UtilisateursController {
     }
 
     private void loadUsers() {
-        String url = "jdbc:mysql://localhost:3306/hopital_db";
+        String url = "jdbc:mysql://localhost:3306/hopital";
         String user = "root";
         String password = "";
 

@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("form.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("DashboardView.fxml"));
         Scene scene = new Scene(loader.load(), 650, 650);
         primaryStage.setTitle("Formulaire de Contact");
         primaryStage.setScene(scene);
