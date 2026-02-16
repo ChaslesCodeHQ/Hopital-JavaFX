@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@style.css"
+            style="-fx-background-color: linear-gradient(to bottom right, #f5fbff, #e3f2fd);">
+
+    <!-- Container principal -->
+    <VBox spacing="20" layoutX="20" layoutY="20">
+
+        <!-- Ligne de 4 cartes -->
+        <HBox spacing="20">
+
+            <VBox fx:id="card1" styleClass="dashboard-card-1" alignment="CENTER" prefWidth="220" prefHeight="160" spacing="10">
+                <Label text="Utilisateurs 👥 " styleClass="card-title-2"/>
+                <fx:include source="NbrUtilisateurs.fxml" layoutX="20" layoutY="20"/>
+            </VBox>
+
+
+            <!-- Carte 2 -->
+            <VBox fx:id="card2" styleClass="dashboard-card-2" alignment="CENTER" prefWidth="220" prefHeight="160" spacing="10">
+                <Label text="Rendez Vous 📅" styleClass="card-title-1"/>
+                <fx:include source="NbreRendezVous.fxml" layoutX="20" layoutY="20"/>
+            </VBox>
+
+            <!-- Carte 3 -->
+            <VBox fx:id="card3" styleClass="dashboard-card-1" alignment="CENTER" prefWidth="220" prefHeight="160" spacing="10">
+                <Label text="Medecins 👤 " styleClass="card-title-2"/>
+                <fx:include source="NbreMedecins.fxml" layoutX="20" layoutY="20"/>
+            </VBox>
+
+            <!-- Carte 4 -->
+            <VBox fx:id="card4" styleClass="dashboard-card-2" alignment="CENTER" prefWidth="220" prefHeight="160" spacing="10">
+                <Label text="Consultation 📄" styleClass="card-title-1"/>
+                <fx:include source="NbreConsultation.fxml" layoutX="20" layoutY="20"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="20">
+            <VBox fx:id="card5" styleClass="dashboard-card-1" alignment="CENTER" prefWidth="350" prefHeight="250" spacing="10">
+                <Label text="Graphe du Nombre de Rendez vous par mois 📈 " styleClass="card-title-2"/>
+                <fx:include source="graphe.fxml" layoutX="20" layoutY="20"/>
+            </VBox>
+
+        </HBox>
+
+        <!-- Ici tu peux ajouter d'autres contenus -->
+    </VBox>
+
+</AnchorPane>

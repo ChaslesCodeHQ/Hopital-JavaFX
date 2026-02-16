@@ -1,49 +1,518 @@
-.parent {
-    -fx-background-color: white;
-    -fx-background-radius: 15;
+.main-window {
+    -fx-background-color: #1a4f7a;
 }
 
-.header-text {
-    -fx-font-size: 28px;
+
+/* Le volet BLEU à gauche */
+.side-pane {
+    -fx-background-color: #1a4f7a;
+    /* Ordre : Haut-Gauche, Haut-Droite, Bas-Droite, Bas-Gauche */
+    -fx-background-radius: 20 0 0 20;
+}
+
+/* Le volet BLANC à droite */
+.form-pane {
+    -fx-background-color: white;
+    /* Ordre : Haut-Gauche, Haut-Droite, Bas-Droite, Bas-Gauche */
+    -fx-background-radius: 0 20 20 0;
+}
+
+.blue-pane {
+    -fx-background-color: #1a4f7a;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 20, 0.5, 0, 0);
+}
+
+.white-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0.3, 0, 0);
+}
+
+
+.logo-text {
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
+    -fx-text-fill: white;
+}
+
+.welcome-text {
+    -fx-text-fill: #b0c4de;
+    -fx-font-size: 14px;
+    -fx-text-alignment: center;
+}
+
+.header-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a4f7a;
+}
+
+.field-label {
+    -fx-text-fill: #555;
+    -fx-font-weight: bold;
 }
 
 .input-field {
-    -fx-background-color: #eee;
-    -fx-pref-width: 250;
-    -fx-padding: 10;
-    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-border-color: #1a4f7a;
+    -fx-border-width: 0 0 2 0; /* Uniquement ligne du bas */
+    -fx-padding: 8;
 }
 
-.btn-primary {
-    -fx-background-color: #4B2C71;
+.login-button {
+    -fx-background-color: #0088cc;
     -fx-text-fill: white;
-    -fx-background-radius: 20;
-    -fx-padding: 10 40;
-}
-
-/* Le Volet Violet */
-.side-pane {
-    -fx-background-color: #6A349B;
-    -fx-background-radius: 15;
-}
-
-.side-header {
-    -fx-font-size: 30px;
     -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-pref-width: 300;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: white;
+}
+
+/* Top bar */
+.top-bar {
+    -fx-background-color: #1a4f7a;
+    -fx-padding: 15;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Side menu */
+.side-menu {
+    -fx-background-color: #2f80c2;
+    -fx-spacing: 10;
+    -fx-padding: 15;
+}
+
+.side-menu .button {
+    -fx-background-color: white;
+    -fx-text-fill: #1a4f7a;
+    -fx-font-size: 14px;
+    -fx-background-radius: 6;
+}
+
+.side-menu .button:hover {
+    -fx-background-color: #1a4f7a;
     -fx-text-fill: white;
 }
 
-.side-text {
-    -fx-text-fill: #ddd;
+/* Content */
+.content-area {
     -fx-padding: 20;
 }
 
-.btn-outline {
-    -fx-background-color: transparent;
-    -fx-border-color: white;
-    -fx-border-radius: 20;
-    -fx-text-fill: white;
-    -fx-padding: 8 35;
+
+.error-text { -fx-text-fill: red; }
+
+.asidebar {
+    -fx-background-color: #1a4f7a;
+    -fx-pref-width: 220;
 }
+
+.aside-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.aside-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.aside-btn:hover {
+    -fx-background-color: white;
+    -fx-text-fill:#1a4f7a;
+}
+
+
+.navbar {
+    -fx-background-color: white;
+    -fx-padding: 8;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.nav-title {
+    -fx-text-fill: #1a4f7a;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.nav-user {
+    -fx-text-fill: #555;
+}
+
+.footer {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+    -fx-border-radius: 12;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+.aside-icon {
+    -fx-text-fill: white;
+    -fx-font-size: 100px;   /* augmente la taille de l’icône */
+}
+
+/*styles pour les cartes*/
+.dashboard-card-1 {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-padding: 20;
+}
+.dashboard-card-2 {
+    -fx-background-color: #1a4f7a;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+.card-title-1 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.card-title-2 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a4f7a;
+}
+
+.card-number {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1abc9c;
+     -fx-font-size: 34px;/* couleur principale */
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.nav-wrapper {
+    -fx-padding: 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+
+/* =========================
+   ASIDEBAR
+========================= */
+.aside-wrapper {
+    -fx-background-color: #1a4f7a;
+    -fx-padding: 10;
+    -fx-pref-width: 230;
+
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #1a4f7a;
+}
+
+/*formulaire de rendez vous*/
+
+/* ===== Titre ===== */
+.labels {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a4f7a;
+    -fx-alignment: center;
+    -fx-padding: 0 0 15 0;
+}
+
+/* ===== VBox qui contient les champs ===== */
+.roote {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-background-radius: 10;
+}
+
+/* ===== ComboBox et TextField ===== */
+.combo-box, .text-field, .date-picker, .text-area {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5 8 5 8;
+    -fx-font-size: 14px;
+}
+
+/* ===== TextArea ===== */
+.text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 5 8 5 8;
+}
+
+/* ===== Bouton ===== */
+.button {
+    -fx-background-color: #1a4f7a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 8 15 8 15;
+}
+
+/* =========================
+   navBar
+========================= */
+
+.notif-container {
+    -fx-padding: 5;
+}
+
+.notif-icon {
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+}
+
+.notif-badge {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+
+    -fx-padding: 2 5 2 5;
+    -fx-background-radius: 10;
+
+    -fx-alignment: center;
+
+    /* Position badge (effet exposant) */
+    -fx-translate-x: 8;
+    -fx-translate-y: -8;
+}
+ /* liste des rendezVous*/
+
+ .rdv-row {
+     -fx-padding: 10;
+     -fx-background-radius: 8;
+     -fx-background-color: #f8f8f8;
+ }
+
+ .rdv-row:hover {
+     -fx-background-color: #eaf3ff;
+     -fx-cursor: hand;
+ }
+
+/* Conteneur du graphe */
+.graphe-container {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+    -fx-padding: 20;
+}
+
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* Ligne de la courbe */
+.chart-series-area-line {
+    -fx-stroke: #7b61ff;
+    -fx-stroke-width: 4px;
+
+    /* Arrondir les extrémités et les jonctions */
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+
+    /* Douceur supplémentaire pour les pics */
+    -fx-smooth: true;
+}
+
+/* Supprimer les petits carrés aux points */
+.chart-line-symbol {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50%; /* si tu veux quand même un cercle arrondi */
+}
+
+/* Zone remplie avec dégradé */
+.chart-series-area-fill {
+    -fx-fill: linear-gradient(
+        to top,
+        white 0%,
+        #dcd3ff 40%,
+        #7b61ff 100%
+    );
+    -fx-opacity: 0.8;
+}
+
+/* Grille douce */
+.chart-horizontal-grid-lines,
+.chart-vertical-grid-lines {
+    -fx-stroke: #eeeeee;
+}
+
+/* Axe */
+.axis-label {
+    -fx-text-fill: #666;
+    -fx-font-weight: bold;
+}
+
+/*s Sroll bar style*/
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+ /*styles des tables*/
+ /* Fond général */
+ .root {
+     -fx-background-color: linear-gradient(to bottom right, #f5fbff, #e3f2fd);
+ }
+
+ /* TableView */
+ .table-view {
+     -fx-background-color: white;
+     -fx-background-radius: 15;
+     -fx-border-radius: 15;
+     -fx-border-color: #d0e6f6;
+     -fx-padding: 10;
+ }
+
+ /* En-tête colonnes */
+ .table-view .column-header-background {
+     -fx-background-color: #1a4f7a;
+     -fx-background-radius: 15 15 0 0;
+ }
+
+ .table-view .column-header,
+ .table-view .filler {
+     -fx-background-color: transparent;
+ }
+
+ .table-view .label {
+     -fx-text-fill: white;
+     -fx-font-weight: bold;
+ }
+
+ /* Lignes */
+ .table-row-cell {
+     -fx-background-color: white;
+     -fx-border-color: transparent transparent #e6f2fa transparent;
+ }
+
+ .table-row-cell:hover {
+     -fx-background-color: #e3f2fd;
+ }
+
+ /* Ligne sélectionnée */
+ .table-row-cell:selected {
+     -fx-background-color: #b3e5fc;
+ }
+
+ /* ScrollBar */
+ .scroll-bar:vertical,
+ .scroll-bar:horizontal {
+     -fx-background-color: transparent;
+ }
+.main-container {
+    -fx-background-color: linear-gradient(to bottom right, #f5fbff, #e3f2fd);
+}
+
+.title-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a4f7a;
+}
+
+.top-bar {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #d0e6f6;
+}
+
+.search-field {
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #1a4f7a;
+    -fx-padding: 8 15 8 15;
+}
+
+.table-container {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);
+}
+ /*style du form d'ajout de patient*/
+ .title-label {
+     -fx-font-size: 24px;
+     -fx-font-weight: bold;
+     -fx-text-fill: #1a4f7a;
+ }
+
+ .btn-add {
+     -fx-background-color: #2196F3;
+     -fx-text-fill: white;
+     -fx-font-weight: bold;
+     -fx-background-radius: 20;
+     -fx-padding: 8 20;
+ }
+
+ .btn-add:hover {
+     -fx-background-color: #1976D2;
+ }
+
+ .form-container {
+     -fx-background-color: white;
+     -fx-padding: 30;
+     -fx-background-radius: 20;
+     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 5);
+ }
+
+ .form-title {
+     -fx-font-size: 22px;
+     -fx-text-fill: #1a4f7a;
+     -fx-font-weight: bold;
+ }
+
+ .btn-save {
+     -fx-background-color: #1a4f7a;
+     -fx-text-fill: white;
+     -fx-background-radius: 15;
+     -fx-padding: 8 30;
+ }
+
+ .btnRDVq {
+     -fx-text-fill: #1a4f7a;
+     -fx-background-color: white;
+ }
+
+ .btnRDV {
+     -fx-text-fill: white;
+     -fx-background-color: #1a4f7a;
+ }
+
+.btnRDV:hover {
+    -fx-text-fill: #1a4f7a;
+    -fx-background-color: white;
+}
+.btnRDVq:hover {
+    -fx-text-fill: white;
+    -fx-background-color: #1a4f7a;
+}
+
+
+
+
+

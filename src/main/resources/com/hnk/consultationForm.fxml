@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.hnk.ConsultationController"
+      style="-fx-padding:25; -fx-background-color:white;">
+
+    <Label text="Nouvelle Consultation"
+           style="-fx-font-size:20px; -fx-font-weight:bold;" />
+
+    <!-- Sélection du rendez-vous -->
+    <Label text="Rendez-vous :" />
+    <ComboBox fx:id="rdvCombo" promptText="Sélectionner un rendez-vous" />
+
+    <!-- Motif -->
+    <Label text="Motif :" />
+    <TextArea fx:id="motifArea" prefRowCount="3" promptText="Indiquez le motif de la consultation" />
+
+    <!-- Type -->
+    <Label text="Type Consultation :" />
+    <ComboBox fx:id="typeCombo" promptText="Sélectionner le type" />
+
+    <!-- Statut -->
+    <Label text="Statut :" />
+    <ComboBox fx:id="statutCombo" promptText="Sélectionner le statut" />
+
+    <!-- Bouton Enregistrer -->
+    <Button text="Enregistrer Consultation"
+            onAction="#saveConsultation"
+            style="-fx-background-color:#1976D2; -fx-text-fill:white;" />
+
+</VBox>

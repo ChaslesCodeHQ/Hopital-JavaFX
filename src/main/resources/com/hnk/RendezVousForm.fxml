@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.FormRendezVous"
+      stylesheets="@style.css"
+      fx:id="container"
+      spacing="15" alignment="CENTER" styleClass="roote"
+>
+
+    <Label text="🏥 Programmer un rendez-vous " styleClass="labels"/>
+    <ComboBox fx:id="cbPatient" promptText="Sélectionner un patient" styleClass="combo-box"/>
+    <ComboBox fx:id="cbMedecin" promptText="Sélectionner un médecin" styleClass="combo-box"/>
+    <DatePicker fx:id="dpDate" styleClass="date-picker"/>
+    <TextField fx:id="tfHeure" promptText="HH:mm" styleClass="text-field"/>
+    <TextField fx:id="tfMotif" promptText="Motif du rendez-vous" styleClass="text-field"/>
+    <ComboBox fx:id="statut" styleClass="combo-box"/>
+    <TextField fx:id="commentaire" promptText="Entrer un commentaire" styleClass="text-field"/>
+    <Button fx:id="btnSave" text="Enregistrer" onAction="#saveRendezVous" styleClass="button"/>
+</VBox>
+
+

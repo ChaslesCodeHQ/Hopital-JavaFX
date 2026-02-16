@@ -1,0 +1,45 @@
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hnk.DashboardController"
+            stylesheets="@style.css"
+            >
+
+    <!-- ===== NAVBAR ===== -->
+    <top>
+        <VBox styleClass="nav-wrapper">
+            <fx:include source="NavBar.fxml"/>
+        </VBox>
+    </top>
+
+    <!-- ===== ASIDEBAR ===== -->
+    <left>
+        <VBox styleClass="aside-wrapper">
+            <fx:include fx:id="asideBar" source="AsideBar.fxml"/>
+        </VBox>
+    </left>
+
+    <!-- ===== CONTENU ===== -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED">
+
+            <StackPane fx:id="contentArea" styleClass="content-wrapper"/>
+
+        </ScrollPane>
+    </center>
+
+    <!-- ===== FOOTER ===== -->
+    <bottom>
+        <VBox styleClass="footer-wrapper">
+            <fx:include source="Footer.fxml"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

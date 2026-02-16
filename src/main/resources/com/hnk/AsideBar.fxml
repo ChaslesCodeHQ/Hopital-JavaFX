@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.AsideBarController"
+      styleClass="asidebar"
+      spacing="12" stylesheets="@style.css">
+
+    <Label text="🏥 MEDICAL APP" styleClass="aside-title"/>
+
+    <Separator/>
+
+    <Button text="🏠 Dashboard" styleClass="aside-btn" onAction="#openHome"/>
+    <Button text="👤 Patients" fx:id="btnPatients" onAction="#openPatients" styleClass="aside-btn"/>
+    <Button text="🏥 Elements" fx:id="btnMedecins" onAction="#openMedecins" styleClass="aside-btn"/>
+    <Button text="📅 Rendez-vous" fx:id="btnRendezVous" onAction="#openRendezVous" styleClass="aside-btn"/>
+    <Button text="📄 Consultations" fx:id="btnConsultations" onAction="#openConsultations" styleClass="aside-btn"/>
+    <Button text="👥 Utilisateurs" fx:id="btnUtilisateurs" onAction="#openUtilisateurs" styleClass="aside-btn" />
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⚙ Paramètres" styleClass="aside-btn"/>
+    <Button text="🚪 Déconnexion" styleClass="aside-btn"/>
+
+</VBox>
+

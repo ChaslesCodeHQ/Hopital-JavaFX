@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      styleClass="footer"
+      alignment="CENTER" spacing="10">
+
+    <Label text="© 2026 - Système de gestion médicale" style="-fx-text-fill: #1a4f7a;"/>
+
+</HBox>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx/25.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.GestionRendezVousController"
+      spacing="20"
+      style="-fx-padding: 20; -fx-background-color: #f0f8ff;">
+
+    <Label text=" 🏥Gestion des rendez-vous"
+           alignment="TOP_CENTER"
+           style="-fx-font-size:30px; -fx-font-weight:bold; -fx-text-fill:#1a4f7a;"/>
+
+    <HBox spacing="20">
+
+        <Button fx:id="btnAddRdv" alignment="CENTER_LEFT" text="+Add rendez-vous" prefWidth="250" prefHeight="160"
+                style="-fx-font-size: 25px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);" styleClass="btnRDVq"/>
+
+        <Button fx:id="btnAddRdvs" alignment="CENTER_LEFT" text="📄Liste rendez-vous" prefWidth="250" prefHeight="160"
+                style="-fx-font-size: 25px;  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);" styleClass="btnRDV"
+        />
+
+    </HBox>
+
+
+</VBox>

@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" styleClass="parent" xmlns:fx="http://javafx.com/fxml" fx:controller="com.hnk.FormController" stylesheets="@style.css">
+<HBox  alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.hnk.FormController" stylesheets="@style.css" styleClass="main-window">
 
-    <VBox alignment="CENTER" layoutX="0" prefHeight="400.0" prefWidth="350.0" spacing="15">
-        <Label text="Se Connecter" styleClass="header-text"/>
-        <TextField fx:id="emailLogin" promptText="Email" styleClass="input-field"/>
-        <PasswordField fx:id="passLogin" promptText="Mot de passe" styleClass="input-field"/>
-        <Hyperlink text="Mot de passe oublié ?" styleClass="forgot-link"/>
-        <Button text="SE CONNECTER" styleClass="btn-primary"/>
+    <padding>
+        <Insets top="100" right="40" bottom="100" left="40"/>
+    </padding>
+    <VBox alignment="CENTER" prefWidth="350.0" styleClass="blue-pane" spacing="20">
+        <Label text="🏥" styleClass="aside-icon"/>
+        <Label text=" MEDICAL APP" styleClass="aside-title" />
+        <Label text="Hôpital Central" styleClass="logo-text"/>
+        <Label text="Bienvenue sur votre espace professionnel. Connectez-vous pour accéder à vos outils."
+               wrapText="true" alignment="CENTER" styleClass="welcome-text"/>
     </VBox>
 
-    <VBox alignment="CENTER" layoutX="350.0" prefHeight="400.0" prefWidth="350.0" spacing="15">
-        <Label text="Créer un Compte" styleClass="header-text"/>
-        <TextField fx:id="nameReg" promptText="Nom" styleClass="input-field"/>
-        <TextField fx:id="emailReg" promptText="Email" styleClass="input-field"/>
-        <PasswordField fx:id="passReg" promptText="Mot de passe" styleClass="input-field"/>
-        <Button text="S'INSCRIRE" styleClass="btn-primary"/>
+
+    <VBox alignment="CENTER" prefWidth="400.0" spacing="20" styleClass="white-pane">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+        <Label text="Accès Clinique" styleClass="header-title"/>
+
+        <VBox spacing="5">
+            <Label text="Nom d'utilisateur" styleClass="field-label"/>
+            <TextField fx:id="userField" promptText="Identifiant" styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Mot de passe" styleClass="field-label"/>
+            <PasswordField fx:id="passField" promptText="••••••••" styleClass="input-field"/>
+        </VBox>
+
+        <Button
+                fx:id="btnLogin"
+                text="Se connecter"
+                prefWidth="200"
+                prefHeight="40"
+                onAction="#handleLogin"
+                style="-fx-background-color:#1a4f7a;
+               -fx-text-fill:white;
+               -fx-font-size:14px;
+               -fx-font-weight:bold;
+               -fx-background-radius:8;" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Hyperlink text="Mot de passe oublié ?" styleClass="small-link"/>
+            <Hyperlink text="Demander un compte" styleClass="small-link"/>
+        </HBox>
+
+        <Label fx:id="errorLabel" styleClass="error-text"/>
     </VBox>
 
-    <VBox fx:id="slidingPane" alignment="CENTER" prefHeight="400.0" prefWidth="350.0" styleClass="side-pane">
-        <Label fx:id="sideTitle" text="Bonjour, Ami !" styleClass="side-header"/>
-        <Label fx:id="sideDesc" text="Entrez vos données pour utiliser toutes les fonctionnalités du site" wrapText="true" alignment="CENTER" styleClass="side-text"/>
-        <Button fx:id="sideBtn" text="S'INSCRIRE" onAction="#handleSideAction" styleClass="btn-outline"/>
-    </VBox>
-
-</AnchorPane>
+</HBox>

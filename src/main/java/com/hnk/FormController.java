@@ -1,37 +1,100 @@
 package com.hnk;
 
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
-import javafx.util.Duration;
+import javafx.stage.Stage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class FormController {
-    @FXML private VBox slidingPane;
-    @FXML private Label sideTitle, sideDesc;
-    @FXML private Button sideBtn;
 
-    private boolean isLoginSide = true;
+    // Champs du formulaire
+    @FXML
+    private TextField userField;
 
     @FXML
-    private void handleSideAction() {
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.6), slidingPane);
+    private PasswordField passField;
 
-        if (isLoginSide) {
-            // Déplacement vers la DROITE pour montrer le formulaire d'inscription
-            transition.setToX(350);
-            sideTitle.setText("Bon Retour !");
-            sideDesc.setText("Pour rester connecté avec nous, connectez-vous avec vos infos.");
-            sideBtn.setText("S'INSCRIRE");
-            isLoginSide = false;
-        } else {
-            // Déplacement vers la GAUCHE pour montrer le login
-            transition.setToX(0);
-            sideTitle.setText("Bonjour, Ami !");
-            sideDesc.setText("Entrez vos données personnelles pour utiliser toutes les fonctionnalités du site.");
-            sideBtn.setText("SE CONNECTER");
-            isLoginSide = true;
+    @FXML
+    private Label errorLabel;
+
+    // Bouton login (OBLIGATOIRE car tu l’utilises pour récupérer le Stage)
+    @FXML
+    private Button btnLogin;
+
+    @FXML
+    private void handleLogin() {
+
+        // Récupération des valeurs saisies
+        String user = userField.getText();
+        String pass = passField.getText();
+
+        // Vérification simple des champs
+        if (user.isEmpty() || pass.isEmpty()) {
+            errorLabel.setText("Veuillez remplir tous les champs.");
+            return;
         }
-        transition.play();
+
+        // Paramètres de connexion MySQL
+        String url = "jdbc:mysql://localhost:3306/hopital_db";
+        String dbUser = "root";
+        String dbPassword = "";
+
+        try (Connection conn = DriverManager.getConnection(url, dbUser, dbPassword)) {
+
+            // Requête SQL sécurisée
+            String query = "SELECT * FROM utilisateurs WHERE nom_utilisateur = ? AND mot_de_passe = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, user);
+            pst.setString(2, pass);
+
+            ResultSet rs = pst.executeQuery();
+
+            // ✅ Si utilisateur trouvé
+            if (rs.next()) {
+// Charger le dashboard
+                Parent root = FXMLLoader.load(
+                        getClass().getResource("DashboardView.fxml")
+                );
+
+// Récupérer la fenêtre actuelle (celle du login)
+                Stage stage = (Stage) btnLogin.getScene().getWindow();
+
+// Récupérer la largeur et la hauteur actuelles de la fenêtre
+                double currentWidth = stage.getWidth();
+                double currentHeight = stage.getHeight();
+
+// Créer la nouvelle scène avec la même taille que la fenêtre actuelle
+                Scene scene = new Scene(root, currentWidth, currentHeight);
+
+// Appliquer la scène au Stage existant
+                stage.setScene(scene);
+                stage.setTitle("Dashboard Médical");
+
+// Centrer la fenêtre sur l’écran (optionnel)
+                stage.centerOnScreen();
+
+// Afficher le Stage
+                stage.show();
+
+            } else {
+                // Login incorrect
+                errorLabel.setText("Identifiants incorrects ❌ .");
+            }
+
+        } catch (SQLException e) {
+            errorLabel.setText("Erreur de connexion à la base de données.");
+            e.printStackTrace();
+        } catch (Exception e) {
+            errorLabel.setText("Erreur lors du chargement du dashboard.");
+            e.printStackTrace();
+        }
     }
 }

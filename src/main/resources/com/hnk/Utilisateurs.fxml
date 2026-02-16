@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.UtilisateursController"
+      spacing="10" alignment="TOP_CENTER"
+      style="-fx-padding:20; ">
+
+    <Label text="Liste des Utilisateurs👥" style="-fx-font-size:25px; -fx-font-weight:bold; -fx-text-fill:#1a4f7a;"/>
+
+    <TableView fx:id="tableUsers" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="200"/>
+            <TableColumn fx:id="colMatricule" text="Matricule" prefWidth="200"/>
+            <TableColumn fx:id="colNom" text="Nom d'utilisateur" prefWidth="200"/>
+            <TableColumn fx:id="colRole" text="Rôle" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

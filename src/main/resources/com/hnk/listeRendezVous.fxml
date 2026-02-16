@@ -1,0 +1,23 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.ListeRendezVousController"
+      spacing="10"
+      stylesheets="style.css"
+      style="-fx-background-color: linear-gradient(to bottom right, #f5fbff, #e3f2fd);"
+      styleClass="rdv-container">
+    <Label text="🏥 Liste des rendez-vous " styleClass="labels" style="-fx-font-size:25px; -fx-font-weight:bold; -fx-text-fill:#1a4f7a;"/>
+    <ListView fx:id="rdvListView" style="    -fx-background-radius: 15;
+    -fx-border-radius: 15;"/>
+    <HBox spacing="10">
+        <Button fx:id="supprimerBtn" text="Supprimer" style=" -fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;
+    -fx-background-color: #FF0000;"/>
+        <Button fx:id="modifierBtn" text="Modifier" style=" -fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;
+    -fx-background-color: #1a4f7a;"/>
+    </HBox>
+
+</VBox>

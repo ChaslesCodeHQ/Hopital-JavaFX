@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.NavBarControle"
+      stylesheets="style.css"
+      styleClass="navbar"
+      spacing="20"
+      alignment="CENTER_LEFT">
+
+    <Label text="Dashboard Médical" styleClass="nav-title"/>
+
+    <Region HBox.hgrow="ALWAYS"/>
+
+    <!-- 🔔 Notifications -->
+    <StackPane styleClass="notif-container">
+        <Label text="📅" styleClass="notif-icon" fx:id="notifIcon"/>
+
+        <!-- Badge -->
+        <Label fx:id="notifBadge" text="0" styleClass="notif-badge"/>
+
+    </StackPane>
+
+    <!-- 👤 Admin / User -->
+    <Label text="👤" styleClass="nav-user"/>
+
+</HBox>
+
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      stylesheets="style.css"
+      fx:controller="com.hnk.ExamensController">
+
+    <Label text="🧪 Gestion des Examens Complémentaires"/>
+
+    <Label text="Sélectionner le patient"/>
+    <ComboBox fx:id="comboPatient" prefWidth="300"/>
+
+    <ComboBox fx:id="comboType" promptText="Type d'examen"/>
+
+    <DatePicker fx:id="datePicker"/>
+
+    <Button text="Prescrire" onAction="#handlePrescrire"/>
+
+    <Separator/>
+
+    <TextArea fx:id="txtResultat" promptText="Résultat de l'examen"/>
+
+    <Button text="Joindre Fichier" onAction="#handleJoindreFichier"/>
+
+    <Button text="Ajouter Résultat" onAction="#handleAjouterResultat"/>
+
+    <Separator/>
+
+    <TableView fx:id="tableExamens" styleClass="modern-table">
+        <columns>
+            <TableColumn fx:id="colId" text="ID"/>
+            <TableColumn fx:id="colType" text="Type"/>
+            <TableColumn fx:id="colDate" text="Date"/>
+            <TableColumn fx:id="colStatut" text="Statut"/>
+        </columns>
+    </TableView>
+
+</VBox>

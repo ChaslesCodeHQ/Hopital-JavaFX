@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.TablePatient"
+      spacing="20"
+      alignment="TOP_CENTER"
+      stylesheets="@style.css"
+      styleClass="main-container">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <!-- ================== TITRE ================== -->
+    <Label text="👥 Gestion des Patients"
+           styleClass="title-label"/>
+
+    <!-- ================== BARRE SUPERIEURE ================== -->
+    <HBox spacing="15"
+          alignment="CENTER_LEFT"
+          styleClass="top-bar">
+
+        <TextField fx:id="searchField"
+                   promptText="🔍 Rechercher par nom, prénom ou téléphone..."
+                   prefWidth="350"
+                   styleClass="search-field"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label text="Patients par page :" styleClass="normal-label"/>
+
+        <ComboBox fx:id="pageSizeCombo"
+                  prefWidth="90"
+                  styleClass="combo-box"/>
+
+
+    </HBox>
+
+    <!-- ================== TABLE ================== -->
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Button fx:id="btnAddPatient"
+                text="+ Add Patient"
+                onAction="#openAddPatientForm"
+                styleClass="btn-add"/>
+
+        <TableView fx:id="tableUsers"
+                   prefHeight="500"
+                   prefWidth="1200"
+                   styleClass="modern-table"/>
+
+    </HBox>
+
+    <!-- ================== PAGINATION ================== -->
+    <Pagination fx:id="pagination"
+                prefWidth="1200"
+                maxPageIndicatorCount="5"
+                styleClass="pagination"/>
+
+</VBox>

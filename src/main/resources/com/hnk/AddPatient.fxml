@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.AddPatientController"
+      spacing="15"
+      alignment="CENTER"
+      stylesheets="@style.css"
+      styleClass="form-container">
+
+    <Label text="Ajouter un Patient 🏥" styleClass="form-title"/>
+
+    <GridPane hgap="15" vgap="15">
+
+        <Label text="Matricule"/>
+        <TextField fx:id="matriculeField" GridPane.columnIndex="1"/>
+
+        <Label text="Nom" GridPane.rowIndex="1"/>
+        <TextField fx:id="nomField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Prénom" GridPane.rowIndex="2"/>
+        <TextField fx:id="prenomField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Date Naissance" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="dateNaisField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Adresse" GridPane.rowIndex="4"/>
+        <TextField fx:id="adresseField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Téléphone" GridPane.rowIndex="5"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Etat" GridPane.rowIndex="6"/>
+        <ComboBox fx:id="etatField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Profession" GridPane.rowIndex="7"/>
+        <TextField fx:id="professionField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Date Enregistrement" GridPane.rowIndex="8"/>
+        <DatePicker fx:id="dateEnregistrementField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <Button fx:id="saveButton" text="Enregistrer" onAction="#savePatient" style="-fx-background-color:#2196F3; -fx-text-fill:white;"/>
+
+
+</VBox>

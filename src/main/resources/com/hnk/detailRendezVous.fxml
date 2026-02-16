@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hnk.DetailRendezVousController"
+      stylesheets="style.css"
+      spacing="10">
+
+    <!-- padding correctement défini -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <VBox  prefWidth="350.0" styleClass="blue-pane" spacing="20">
+        <Label text="🏥 Détails du rendez-vous " styleClass="labels" style="-fx-font-size:25px; -fx-font-weight:bold; -fx-text-fill:#1a4f7a;"/>
+        <Label fx:id="lblNom" style="-fx-font-size: 16; -fx-font-weight: bold"/>
+        <Label fx:id="lblMedecin"/>
+        <Label fx:id="lblDate"/>
+        <Label fx:id="lblHeure"/>
+        <Label fx:id="lblMotif"/>
+        <Label fx:id="lblStatut"/>
+    </VBox>
+
+
+
+    <Button text="Fermer" onAction="#close"/>
+</VBox>
+
